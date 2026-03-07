@@ -1,0 +1,375 @@
+.layout {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar-title {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e91e63; /* nice pink/red for Valentine's theme */
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px; /* space between emojis and text */
+}
+
+.sidebar-title .title-text {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: #c2185b;
+}
+
+.sidebar {
+  width: 240px;
+  background: #f6f8fc;
+  padding: 16px;
+}
+
+.nav {
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.nav.active {
+  background: #d2e3fc;
+  font-weight: bold;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+/* Search bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #f1f3f4;
+  border-radius: 24px;
+  padding: 0 12px;
+  width: 600px;
+  max-width: 100%;
+}
+
+.search-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  opacity: 0.6;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  background: transparent;
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Right side actions */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.icon-btn:hover {
+  background: #f1f3f4;
+}
+
+/* Profile circle */
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e81ad3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+}
+
+.mini-sidebar {
+  width: 72px;
+  background: #f6f8fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* Hamburger button */
+.hamburger {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hamburger:hover {
+  background: #e8f0fe;
+}
+
+/* Mini items */
+.mini-item {
+  width: 50px;
+  height: 50px;
+  padding: 6px 0;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mini-item:hover {
+  background: #e8f0fe;
+}
+
+.mini-item.active {
+  background: #d2e3fc;
+}
+
+/* Icon + label */
+.mini-icon {
+  font-size: 18px;
+}
+
+.mini-label {
+  font-size: 11px;
+  margin-top: 2px;
+  color: #444;
+}
+
+.filter-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+  opacity: 0.7;
+}
+
+.filter-btn:hover {
+  opacity: 1;
+}
+
+/* Profile dropdown */
+.profile-menu {
+  position: absolute;
+  top: 64px;
+  right: 16px;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  z-index: 100;
+}
+
+.profile-menu .email {
+  font-size: 12px;
+  color: #666;
+}
+
+.profile-menu hr {
+  margin: 8px 0;
+}
+
+.profile-menu button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.profile-menu button:hover {
+  background: #f1f3f4;
+}
+
+.compose-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  background: #1a73e8; /* Gmail blue */
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  width: calc(100% - 32px);
+  justify-content: center;
+  font-size: 14px;
+}
+
+.compose-btn:hover {
+  background: #1765c1; /* darker blue on hover */
+}
+
+/* Backdrop */
+.compose-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+/* Modal container */
+.compose-modal {
+  background: #fff;
+  width: 480px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Header */
+.compose-modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 16px;
+  background: #f1f3f4;
+}
+
+.compose-modal .close-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.compose-modal .close-btn:hover {
+  color: #000;
+}
+
+/* Body */
+.compose-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+.compose-body label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.compose-body input,
+.compose-body textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-top: 4px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.compose-body input:focus,
+.compose-body textarea:focus {
+  border-color: #1a73e8;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.15);
+}
+
+.compose-body textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+/* Footer */
+.compose-modal footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px;
+  border-top: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.send-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.send-btn:hover {
+  background: #1765c1;
+  transform: translateY(-1px);
+}
+
+.send-btn:active {
+  transform: translateY(0);
+}

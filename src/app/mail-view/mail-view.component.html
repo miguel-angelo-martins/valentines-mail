@@ -1,0 +1,100 @@
+<div class="mail-view-header">
+  <button class="back-btn" (click)="back.emit()">← Back</button>
+  <div class="mail-actions">
+    <button class="other-button" title="Reply">↩️ Reply</button>
+    <button class="other-button" title="Forward">➡️ Forward</button>
+    <button class="other-button" title="Star">
+      {{ mail.starred ? "⭐" : "☆" }}
+    </button>
+  </div>
+</div>
+
+<h2 class="mail-subject">{{ mail.subject }}</h2>
+
+<div class="mail-info">
+  <p><strong>From:</strong> {{ mail.from }} &lt;{{ mail.fromEmail }}&gt;</p>
+  <p>
+    <strong>To:</strong>
+    {{ mail.folder === "sent" ? mail.to : "filipa&#64;valentinesmail.com" }}
+  </p>
+  <p><strong>Date:</strong> {{ mail.date }}</p>
+</div>
+
+<!-- Special button for the Valentine invitation -->
+<div
+  *ngIf="mail.subject === 'Convite para o Dia dos Namorados'"
+  class="invite-btn-container"
+>
+  <button class="invite-btn" (click)="openInvite()">💌 Abrir Convite</button>
+</div>
+
+<pre class="mail-body">{{ mail.body }}</pre>
+
+<!-- Invitation modal -->
+<div class="invite-modal-backdrop" *ngIf="showInvite">
+  <div class="invite-modal">
+    <header>
+      <h2>Convite para o Dia dos Namorados 💖</h2>
+      <button class="close-btn" (click)="closeInvite()">×</button>
+    </header>
+    <div class="invite-content">
+      <p>Princesa,</p>
+      <p>
+        Espero que aceite o seguinte convite para o Dia dos Namorados, sendo que
+        estou ansioso por passar o dia com o meu mulherão.
+      </p>
+      <p>
+        O meu plano é ir buscá-la depois do almoço, não definindo hora para não
+        a stressar em demasia 😅, mas solictando que seja cedo o suficiente de
+        forma a aproveitar bem o dia 😉. Portanto, defino o máximo de 14h30.
+      </p>
+
+      <p>
+        Sendo Santo Tirso uma cidade desprovida de qualquer tipo de ponto de
+        interesse 😔, irei fazer-me valer de um uso um bocado mais abusado do
+        meu veiculo para podermos aproveitar decentemente o dia.
+      </p>
+
+      <p>
+        Não estando a metereologia favorável, mas querendo garantir que se faz
+        algo diferente, seguiremos para o <strong>North Wall</strong> e iremos
+        praticar escalada. Um plano mais desafiante, no qual o meu mulherão irá
+        certamente arrasar
+      </p>
+      <p>
+        Daí deslocar-nos-emos de novo para uma zona mais perto da nossa terra
+        natal e na <strong>Trofa</strong> podemos repor as calorias abatidas
+        lanchando num local que a princesa gosta muito: o
+        <strong>Unicroissant</strong>
+      </p>
+
+      <p>
+        Depois, chega a parte mais dificil do meu dia: levar o meu mulherão de
+        novo a sua casa. Lá, ela irá ter tempo para se aperaltar para o Jantar
+        romântico que vamos ter.
+      </p>
+
+      <p>
+        Às 19h15 estarei novamente à sua porta para a ir buscar e seguiremos
+        para o restaurante:
+      </p>
+
+      <br />
+      <p><strong>Detalhes do restaurante</strong></p>
+      <p><u>Dia:</u> 14 de fevereiro</p>
+      <p><u>Local:</u> A descobrir no dia 😤</p>
+      <p><u>Hora:</u> 20h00</p>
+      <p>
+        <u>Outfit:</u> Apesar de me deixar sempre boquiaberto com qualquer
+        indumentária, é recomendado algo mais elegante para a ocasião.
+      </p>
+
+      <br />
+      <p>
+        Depois, seguiremos para minha casa, onde terei preparada uma surpresa
+        especial para a minha princesa e um pequeno mimo.
+      </p>
+      <p>Do teu, <br />Ninfocolas 😘</p>
+    </div>
+  </div>
+</div>

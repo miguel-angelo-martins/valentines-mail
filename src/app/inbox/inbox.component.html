@@ -1,0 +1,24 @@
+<div class="mail-list">
+  <div
+    class="mail-row"
+    *ngFor="let mail of filteredMails"
+    [class.unread]="!mail.read"
+    (click)="open.emit(mail)"
+  >
+    <button class="star" (click)="toggleStar(mail); $event.stopPropagation()">
+      {{ mail.starred ? "⭐" : "☆" }}
+    </button>
+
+    <div class="mail-main">
+      <!-- Show From for inbox, To for sent -->
+      <span class="mail-from">
+        {{ mail.folder === "sent" ? "To: " + mail.to : mail.from }}
+      </span>
+      <span class="mail-title">{{ mail.subject }}</span>
+    </div>
+
+    <span class="mail-date">
+      {{ mail.date }}
+    </span>
+  </div>
+</div>
