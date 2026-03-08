@@ -4,6 +4,46 @@ export const MAILS = [
     from: 'Colas 😘',
     fromEmail: 'colas@valentinesmail.com',
     to: 'filipa@valentinesmail.com',
+    subject: 'Feliz Dia Internacional da Mulher',
+    body: 'Bom dia princesa. Venho apenas desejar um excelente dia a uma mulher muito especial. LOVE U 😘',
+    date: '10h00',
+    read: false,
+    starred: true,
+    folder: 'inbox',
+  },
+  {
+    id: 2,
+    from: 'Netflix',
+    fromEmail: 'netflix@mail.com',
+    to: 'filipa@valentinesmail.com',
+    subject: 'Segunda parte da nova temporada de Bridgerton disponível!',
+    body: 'A segunda parteda da quarta temporada de Bridgerton já está disponível na Netflix!',
+    date: '26 fev',
+    read: true,
+    starred: true,
+    folder: 'inbox',
+  },
+  {
+    id: 3,
+    from: 'Colas 😘',
+    fromEmail: 'colas@valentinesmail.com',
+    to: 'filipa@valentinesmail.com',
+    subject: 'Cada vez mais apaixonado',
+    body: `
+    Apesar de o plano não ter sido exatamente igual ao planeado, nomeadamente no que ao restaurante diz respeito, gostei muito ❤️. Parece que tudo contigo é incrivel.
+    
+    P.S.: Não te safaste nada mal na escalada 😉
+    `,
+    date: '15 fev',
+    read: false,
+    starred: true,
+    folder: 'inbox',
+  },
+  {
+    id: 4,
+    from: 'Colas 😘',
+    fromEmail: 'colas@valentinesmail.com',
+    to: 'filipa@valentinesmail.com',
     subject: 'Convite para o Dia dos Namorados',
     body: `
 Venho por este meio solicitar a companhia da minha princesa para um date um bocadinho mais especial.
@@ -16,25 +56,25 @@ Os detalhes do nosso dia estão especificados no convite em anexo.
 
 Aceitas ser a minha valentine? 💖
     `,
-    date: '14h00',
+    date: '07 fev',
     read: false,
     starred: true,
     folder: 'inbox',
   },
   {
-    id: 2,
+    id: 5,
     from: 'CTT Expresso',
     fromEmail: 'expresso@ctt.pt',
     to: 'filipa@valentinesmail.com',
     subject: 'A tua encomenda foi entregue!',
     body: 'A tua encomenda de ?????? foi entregue às 09h37 do dia 07 de fevereiro.',
-    date: '09h37',
+    date: '07 fev',
     read: true,
     starred: false,
     folder: 'inbox',
   },
   {
-    id: 3,
+    id: 6,
     from: 'CTT Expresso',
     fromEmail: 'expresso@ctt.pt',
     to: 'filipa@valentinesmail.com',
@@ -52,7 +92,7 @@ Utiliza o PIN 4567 para confirmar a entrega.
     folder: 'inbox',
   },
   {
-    id: 4,
+    id: 7,
     from: 'The Fork',
     fromEmail: 'thefork@mail.com',
     to: 'filipa@valentinesmail.com',
@@ -75,7 +115,7 @@ Detalhes da reserva:
     folder: 'inbox',
   },
   {
-    id: 5,
+    id: 8,
     from: 'Netflix',
     fromEmail: 'netflix@mail.com',
     to: 'filipa@valentinesmail.com',
@@ -88,7 +128,7 @@ Detalhes da reserva:
   },
   // SENT MAILS
   {
-    id: 6,
+    id: 9,
     from: 'Me',
     fromEmail: 'filipa@valentinesmail.com',
     to: 'colas@valentinesmail.com',

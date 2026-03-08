@@ -13,6 +13,12 @@ export class MailViewComponent {
   @Output() back = new EventEmitter<void>();
 
   showInvite = false;
+  showPhotoGallery = false;
+  activePhotoIndex = 0;
+  photos = [
+    { src: '/escalada1.jpg', alt: 'Escalada - Filipa' },
+    { src: '/escalada2.jpg', alt: 'Escalada - Miguel' },
+  ];
 
   openInvite() {
     this.showInvite = true;
@@ -20,6 +26,24 @@ export class MailViewComponent {
 
   closeInvite() {
     this.showInvite = false;
+  }
+
+  openPhotoGallery() {
+    this.activePhotoIndex = 0;
+    this.showPhotoGallery = true;
+  }
+
+  closePhotoGallery() {
+    this.showPhotoGallery = false;
+  }
+
+  previousPhoto() {
+    this.activePhotoIndex =
+      (this.activePhotoIndex - 1 + this.photos.length) % this.photos.length;
+  }
+
+  nextPhoto() {
+    this.activePhotoIndex = (this.activePhotoIndex + 1) % this.photos.length;
   }
 
   toggleStar() {

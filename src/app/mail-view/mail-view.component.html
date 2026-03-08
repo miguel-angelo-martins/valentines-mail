@@ -39,6 +39,15 @@
     <button class="invite-btn" (click)="openInvite()">Abrir Convite</button>
   </div>
 
+  <div
+    *ngIf="mail.subject === 'Cada vez mais apaixonado'"
+    class="invite-btn-container"
+  >
+    <button class="invite-btn photos-btn" (click)="openPhotoGallery()">
+      Ver Fotos
+    </button>
+  </div>
+
   <pre class="mail-body">{{ mail.body }}</pre>
 </article>
 
@@ -110,5 +119,37 @@
     </div>
   </div>
 </div>
+
+<!-- Photo modal -->
+<div class="invite-modal-backdrop" *ngIf="showPhotoGallery">
+  <div class="photo-modal">
+    <header>
+      <button class="close-btn" (click)="closePhotoGallery()">&times;</button>
+    </header>
+
+    <div class="photo-stage">
+      <button class="photo-nav prev" (click)="previousPhoto()">&lsaquo;</button>
+
+      <figure class="photo-card">
+        <img
+          [src]="photos[activePhotoIndex].src"
+          [alt]="photos[activePhotoIndex].alt"
+        />
+      </figure>
+
+      <button class="photo-nav next" (click)="nextPhoto()">&rsaquo;</button>
+    </div>
+
+    <div class="photo-dots">
+      <button
+        *ngFor="let photo of photos; let i = index"
+        class="dot"
+        [class.active]="i === activePhotoIndex"
+        (click)="activePhotoIndex = i"
+      ></button>
+    </div>
+  </div>
+</div>
+
 
 
