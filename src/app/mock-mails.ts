@@ -1,8 +1,8 @@
 export const MAILS = [
   {
     id: 1,
-    from: 'Ninfocolas 😘',
-    fromEmail: 'ninfocolas@valentinesmail.com',
+    from: 'Colas 😘',
+    fromEmail: 'colas@valentinesmail.com',
     to: 'filipa@valentinesmail.com',
     subject: 'Convite para o Dia dos Namorados',
     body: `
@@ -91,7 +91,7 @@ Detalhes da reserva:
     id: 6,
     from: 'Me',
     fromEmail: 'filipa@valentinesmail.com',
-    to: 'ninfocolas@valentinesmail.com',
+    to: 'colas@valentinesmail.com',
     subject: 'Jogo de Padel',
     body: `
 Hoje foste um estúpido no Padel! Não sei o que te deu, mas espero que tenhas aprendido a lição.
