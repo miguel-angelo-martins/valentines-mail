@@ -401,23 +401,7 @@
   }
 
   .mini-sidebar {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 8px 12px;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 8px;
-    position: sticky;
-    top: 0;
-    z-index: 150;
-    background: #f6f8fc;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
+    display: none;
   }
 
   .hamburger {
@@ -486,10 +470,6 @@
 
   .content {
     padding: 10px;
-  }
-
-  .layout.mail-open .mini-sidebar {
-    display: none;
   }
 
   .content.mail-open-content {
