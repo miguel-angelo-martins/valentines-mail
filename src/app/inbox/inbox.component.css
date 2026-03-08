@@ -69,3 +69,43 @@
   font-size: 12px;
   color: #666;
 }
+
+@media (max-width: 768px) {
+  .mail-row {
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .star {
+    width: 28px;
+    padding-top: 2px;
+    flex: 0 0 auto;
+  }
+
+  .mail-main {
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .mail-from {
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .mail-title {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .mail-date {
+    min-width: auto;
+    margin-left: auto;
+    white-space: nowrap;
+    font-size: 11px;
+    padding-top: 2px;
+  }
+}

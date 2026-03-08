@@ -1,34 +1,46 @@
-<div class="mail-view-header">
-  <button class="back-btn" (click)="back.emit()">← Back</button>
-  <div class="mail-actions">
-    <button class="other-button" title="Reply">↩️ Reply</button>
-    <button class="other-button" title="Forward">➡️ Forward</button>
-    <button class="other-button" title="Star">
-      {{ mail.starred ? "⭐" : "☆" }}
+<article class="mail-view-shell">
+  <div class="mail-view-header">
+    <button class="back-btn icon-btn-mobile" title="Back" (click)="back.emit()">
+      <span class="btn-icon back-mobile-icon">⬅️</span>
+      <span class="btn-label">Back</span>
     </button>
+    <div class="mail-actions">
+      <button class="other-button icon-btn-mobile" title="Reply">
+        <span class="btn-icon">↩️</span>
+        <span class="btn-label">Reply</span>
+      </button>
+      <button class="other-button icon-btn-mobile" title="Forward">
+        <span class="btn-icon">➡️</span>
+        <span class="btn-label">Forward</span>
+      </button>
+      <button class="other-button icon-btn-mobile" title="Star" (click)="toggleStar()">
+        <span class="btn-icon">{{ mail.starred ? "⭐" : "☆" }}</span>
+        <span class="btn-label">Star</span>
+      </button>
+    </div>
   </div>
-</div>
 
-<h2 class="mail-subject">{{ mail.subject }}</h2>
+  <h2 class="mail-subject">{{ mail.subject }}</h2>
 
-<div class="mail-info">
-  <p><strong>From:</strong> {{ mail.from }} &lt;{{ mail.fromEmail }}&gt;</p>
-  <p>
-    <strong>To:</strong>
-    {{ mail.folder === "sent" ? mail.to : "filipa&#64;valentinesmail.com" }}
-  </p>
-  <p><strong>Date:</strong> {{ mail.date }}</p>
-</div>
+  <div class="mail-info">
+    <p><strong>From:</strong> {{ mail.from }} &lt;{{ mail.fromEmail }}&gt;</p>
+    <p>
+      <strong>To:</strong>
+      {{ mail.folder === "sent" ? mail.to : "filipa&#64;valentinesmail.com" }}
+    </p>
+    <p><strong>Date:</strong> {{ mail.date }}</p>
+  </div>
 
-<!-- Special button for the Valentine invitation -->
-<div
-  *ngIf="mail.subject === 'Convite para o Dia dos Namorados'"
-  class="invite-btn-container"
->
-  <button class="invite-btn" (click)="openInvite()">💌 Abrir Convite</button>
-</div>
+  <!-- Special button for the Valentine invitation -->
+  <div
+    *ngIf="mail.subject === 'Convite para o Dia dos Namorados'"
+    class="invite-btn-container"
+  >
+    <button class="invite-btn" (click)="openInvite()">Abrir Convite</button>
+  </div>
 
-<pre class="mail-body">{{ mail.body }}</pre>
+  <pre class="mail-body">{{ mail.body }}</pre>
+</article>
 
 <!-- Invitation modal -->
 <div class="invite-modal-backdrop" *ngIf="showInvite">
@@ -98,3 +110,5 @@
     </div>
   </div>
 </div>
+
+

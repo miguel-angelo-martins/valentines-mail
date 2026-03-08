@@ -21,4 +21,9 @@ export class MailViewComponent {
   closeInvite() {
     this.showInvite = false;
   }
+
+  toggleStar() {
+    if (!this.mail) return;
+    this.mail.starred = !this.mail.starred;
+  }
 }

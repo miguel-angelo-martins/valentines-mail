@@ -1,7 +1,14 @@
+.mail-view-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
 .mail-view-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
@@ -25,6 +32,14 @@
   border-radius: 20px !important;
 }
 
+.btn-icon {
+  line-height: 1;
+}
+
+.back-mobile-icon {
+  display: none;
+}
+
 .mail-actions button {
   margin-left: 8px;
   background: #f1f3f4;
@@ -36,6 +51,11 @@
   transition: background 0.2s;
 }
 
+.mail-actions {
+  display: flex;
+  align-items: center;
+}
+
 .mail-actions button:hover {
   background: #e0e0e0;
 }
@@ -43,12 +63,14 @@
 .mail-subject {
   font-size: 20px;
   margin-bottom: 8px;
+  word-break: break-word;
 }
 
 .mail-info p {
   margin: 2px 0;
   font-size: 14px;
   color: #555;
+  word-break: break-word;
 }
 
 .mail-body {
@@ -58,6 +80,7 @@
   font-family: "Courier New", monospace;
   white-space: pre-wrap;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 /* Invite button */
@@ -133,4 +156,85 @@
 .invite-modal .invite-content p {
   margin: 8px 0;
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .mail-view-shell {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .mail-view-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #fff;
+    padding: 6px 0 8px;
+    margin-bottom: 10px;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .back-btn {
+    width: auto;
+    min-height: 40px;
+    padding: 0 10px;
+    border-radius: 20px;
+    text-align: center;
+    flex: 1;
+    background: #f1f3f4;
+    color: #222;
+  }
+
+  .mail-actions {
+    justify-content: stretch;
+    flex-wrap: nowrap;
+    gap: 8px;
+    flex: 3;
+  }
+
+  .mail-actions button {
+    margin-left: 0;
+    min-height: 40px;
+    border-radius: 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-btn-mobile .btn-label {
+    display: none;
+  }
+
+  .icon-btn-mobile .btn-icon {
+    font-size: 18px;
+  }
+
+  .back-mobile-icon {
+    display: inline;
+  }
+
+  .other-button {
+    border-radius: 20px !important;
+  }
+
+  .mail-subject {
+    font-size: 18px;
+  }
+
+  .mail-body {
+    font-size: 13px;
+    padding: 10px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  .invite-modal {
+    width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    padding: 16px;
+  }
 }

@@ -12,7 +12,7 @@ import { MAILS } from './mock-mails';
   imports: [CommonModule, FormsModule, InboxComponent, MailViewComponent],
 
   template: `
-    <div class="layout">
+    <div class="layout" [class.mail-open]="selectedMail">
       <aside class="mini-sidebar">
         <button class="hamburger" title="Main menu">☰</button>
 
@@ -106,7 +106,7 @@ import { MAILS } from './mock-mails';
           </div>
         </header>
 
-        <section class="content">
+        <section class="content" [class.mail-open-content]="selectedMail">
           <app-inbox
             *ngIf="!selectedMail"
             [folder]="currentFolder"
