@@ -16,8 +16,8 @@ export class MailViewComponent {
   showPhotoGallery = false;
   activePhotoIndex = 0;
   photos = [
-    { src: '/escalada1.jpg', alt: 'Escalada - Filipa' },
-    { src: '/escalada2.jpg', alt: 'Escalada - Miguel' },
+    { src: 'escalada1.jpg', alt: 'Escalada - Filipa' },
+    { src: 'escalada2.jpg', alt: 'Escalada - Miguel' },
   ];
 
   openInvite() {
